@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="nodeTodo">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #todo-list              { margin-bottom:30px; }
+    </style>
+
+    <!-- js -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="core.js"></script>
+
+</head>
+
+<!-- setting controller, and GET ing all todos -->
+<body ng-controller="mainController">
+
+<div class="container">
+    <div class="jumbotron text-center">
+        <h>I'm a Todo-aholic <span class="label label-info">{{ todos.length }}</span> </h>
+    </div>
+<!-- To Do List -->
+<div class="todo-list row">
+    <div class="col-sm-4 col-sm-offset-4">
+        <div class="checkbox" ng-repeat="todo in todos">
+            <label>
+                <div class="checkbox" ng-click="deleteTodo(todo._id">{{ todo.text }}</div>
+            </label>
+        </div>
+    </div>
+</div>
+
+<!-- create to do FORM -->
+<div id="todo-form" class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg text-center" placeholder="I need...." ng-model="formData.text">
+                </div>
+        <!--  createTodo() to create new todo's -->
+                <button class="btn btn-primary btn-lg" type="submit" ng-click="createTodo()">Add</button>
+
+        </form>
+    </div>
+</div>
+
+</div>
+
+
+</body>
+</html>
