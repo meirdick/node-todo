@@ -13,9 +13,12 @@
     </style>
 
     <!-- js -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
-    <script src="core.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> <!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script> <!-- load angular-->
+    <!-- load controllers and services -->
+    <script src="js/controllers/main.js"></script>
+    <script src="js/services/todos.js"></script>
+    <script src="js/core.js"></script>
 
 </head>
 
@@ -31,7 +34,7 @@
     <div class="col-sm-4 col-sm-offset-4">
         <div class="checkbox" ng-repeat="todo in todos">
             <label>
-                <div class="checkbox" ng-click="deleteTodo(todo._id">{{ todo.text }}</div>
+                <input type="checkbox" ng-click="deleteTodo(todo._id)">{{ todo.text }}
             </label>
         </div>
     </div>
